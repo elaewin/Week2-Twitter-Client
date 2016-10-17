@@ -21,6 +21,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        
         // Do any additional setup after loading the view, typically from a nib.
         
     }
@@ -45,7 +48,7 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: UITableViewDataSource {
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allTweets.count
@@ -59,8 +62,13 @@ extension ViewController: UITableViewDataSource {
         
         cell.textLabel?.text = currentTweet.text
         
-        return cell
+        cell.detailTextLabel?.text = currentTweet.user?.name
         
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("User clicked on \(indexPath.row)")
     }
 }
 

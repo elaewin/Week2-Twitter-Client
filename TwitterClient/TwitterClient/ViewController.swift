@@ -18,35 +18,46 @@ class ViewController: UIViewController {
         }
     }
     
+    // called only the first time that the view loads
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
-        
+        setupTableView()
         // Do any additional setup after loading the view, typically from a nib.
         
     }
     
+    // setting dataSource and delegate in a setupTableView func helps make the view setup explicit to anyone else looking at the code later on (or me, when I can't remember where this happens), especially if there is a lot of complexity.
+    func setupTableView() {
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+    }
+    
+    // This func is called every time the view appears on screen
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        JSONParser.tweetsFrom(data: JSONParser.sampleJSONData) { (success, results) in
-            
-            if success {
-                if let tweets = results {
-                    self.allTweets = tweets
+        update()
+    }
+
+    func update() {
+        API.shared.getTweets { (tweets) in
+            if tweets != nil {
+                OperationQueue.main.addOperation {
+                    self.allTweets = tweets!
                 }
             }
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
 }
+
+// MARK: TableViewDataSource and TableViewDelegate methods
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
@@ -68,7 +79,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("User clicked on \(indexPath.row)")
+        print("User clicked on tweet at index \(indexPath.row)")
     }
 }
 

@@ -27,7 +27,7 @@ class API {
         
         let accountStore = ACAccountStore()
         let accountType = accountStore.accountType(withAccountTypeIdentifier: ACAccountTypeIdentifierTwitter)
-        
+      
         // include both error and success in different if statements because it's possible to get no error but not have success (because no twitter acct.)
         accountStore.requestAccessToAccounts(with: accountType, options: nil) { (success, error) in
             

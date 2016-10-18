@@ -32,6 +32,7 @@
 		556F04FC1DB543DB0086FC42 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		556F04FF1DB54F810086FC42 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		55A7B8B51DB69E2500E8153F /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		55A7B8B71DB6C65D00E8153F /* day7lab.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = day7lab.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +49,7 @@
 		556F04DA1DB542670086FC42 = {
 			isa = PBXGroup;
 			children = (
+				55A7B8B71DB6C65D00E8153F /* day7lab.playground */,
 				556F04E51DB542670086FC42 /* TwitterClient */,
 				556F04E41DB542670086FC42 /* Products */,
 			);

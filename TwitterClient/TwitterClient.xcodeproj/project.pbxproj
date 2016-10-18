@@ -62,11 +62,9 @@
 		556F04E51DB542670086FC42 /* TwitterClient */ = {
 			isa = PBXGroup;
 			children = (
-				556F04F81DB542D90086FC42 /* tweet.json */,
 				556F04E61DB542670086FC42 /* AppDelegate.swift */,
 				556F04FE1DB5442F0086FC42 /* Model */,
 				556F04E81DB542670086FC42 /* ViewController.swift */,
-				556F04EA1DB542670086FC42 /* Main.storyboard */,
 				556F04ED1DB542670086FC42 /* Assets.xcassets */,
 				556F04EF1DB542670086FC42 /* LaunchScreen.storyboard */,
 				556F04F21DB542670086FC42 /* Info.plist */,
@@ -77,9 +75,11 @@
 		556F04FE1DB5442F0086FC42 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				556F04F81DB542D90086FC42 /* tweet.json */,
 				556F04FF1DB54F810086FC42 /* JSONParser.swift */,
 				556F04FC1DB543DB0086FC42 /* Tweet.swift */,
 				556F04FA1DB543CB0086FC42 /* User.swift */,
+				556F04EA1DB542670086FC42 /* Main.storyboard */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -323,6 +323,7 @@
 				556F04F71DB542670086FC42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

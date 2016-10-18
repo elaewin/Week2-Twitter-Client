@@ -16,6 +16,7 @@
 		556F04FB1DB543CB0086FC42 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556F04FA1DB543CB0086FC42 /* User.swift */; };
 		556F04FD1DB543DB0086FC42 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556F04FC1DB543DB0086FC42 /* Tweet.swift */; };
 		556F05001DB54F810086FC42 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556F04FF1DB54F810086FC42 /* JSONParser.swift */; };
+		55A7B8B61DB69E2500E8153F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7B8B51DB69E2500E8153F /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		556F04FA1DB543CB0086FC42 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		556F04FC1DB543DB0086FC42 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		556F04FF1DB54F810086FC42 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
+		55A7B8B51DB69E2500E8153F /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +66,8 @@
 			children = (
 				556F04E61DB542670086FC42 /* AppDelegate.swift */,
 				556F04FE1DB5442F0086FC42 /* Model */,
-				556F04E81DB542670086FC42 /* ViewController.swift */,
+				55A7B8B31DB67FF300E8153F /* Controller */,
+				55A7B8B41DB6805500E8153F /* View */,
 				556F04ED1DB542670086FC42 /* Assets.xcassets */,
 				556F04EF1DB542670086FC42 /* LaunchScreen.storyboard */,
 				556F04F21DB542670086FC42 /* Info.plist */,
@@ -82,6 +85,22 @@
 				556F04EA1DB542670086FC42 /* Main.storyboard */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		55A7B8B31DB67FF300E8153F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				556F04E81DB542670086FC42 /* ViewController.swift */,
+				55A7B8B51DB69E2500E8153F /* API.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		55A7B8B41DB6805500E8153F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +180,7 @@
 				556F05001DB54F810086FC42 /* JSONParser.swift in Sources */,
 				556F04E71DB542670086FC42 /* AppDelegate.swift in Sources */,
 				556F04FB1DB543CB0086FC42 /* User.swift in Sources */,
+				55A7B8B61DB69E2500E8153F /* API.swift in Sources */,
 				556F04FD1DB543DB0086FC42 /* Tweet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

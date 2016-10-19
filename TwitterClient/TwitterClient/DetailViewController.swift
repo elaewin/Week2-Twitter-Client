@@ -17,6 +17,7 @@ class DetailViewController: UIViewController {
 
         print("User's name: \(tweet.user?.name)")
         print("Tweet text: \(tweet.text)")
+        print("Retweet?: \(tweet.retweet)")
         
         // Do any additional setup after loading the view.
     }

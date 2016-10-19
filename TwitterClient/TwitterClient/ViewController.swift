@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     func setupTableView() {
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        self.tableView.estimatedRowHeight = 75
+        self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
@@ -95,7 +95,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         // can do this because we force cast the cell as TweetTableViewCell two lines of code above.
         cell.tweetText.text = currentTweet.text
         
-        cell.detailTextLabel?.text = currentTweet.user?.name
+        cell.userNameText.text = currentTweet.user?.name
         
         // polymporphism in action: actually now returning TweetTableViewCell now, because it is a subclass of UITableViewCell.
         return cell

@@ -18,31 +18,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yUz-uO-EHp">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yUz-uO-EHp">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" id="ecV-Tb-Dw4" customClass="TweetTableViewCell" customModule="TwitterClient" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="88" id="ecV-Tb-Dw4" customClass="TweetTableViewCell" customModule="TwitterClient" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ecV-Tb-Dw4" id="EKh-yO-XdZ">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="87"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n20-l7-9QR">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n20-l7-9QR">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vG-S6-WZ1">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="n20-l7-9QR" firstAttribute="leading" secondItem="EKh-yO-XdZ" secondAttribute="leading" constant="8" id="0uN-df-I9H"/>
-                                                <constraint firstAttribute="trailing" secondItem="n20-l7-9QR" secondAttribute="trailing" constant="8" id="6LV-En-IOq"/>
-                                                <constraint firstItem="n20-l7-9QR" firstAttribute="top" secondItem="EKh-yO-XdZ" secondAttribute="top" constant="8" id="Kwg-H6-vZj"/>
-                                                <constraint firstAttribute="bottom" secondItem="n20-l7-9QR" secondAttribute="bottom" constant="8" id="e5M-Hl-sYZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="8vG-S6-WZ1" secondAttribute="trailing" constant="8" id="07O-pd-30b"/>
+                                                <constraint firstItem="n20-l7-9QR" firstAttribute="top" secondItem="EKh-yO-XdZ" secondAttribute="top" constant="8" id="75N-ci-ylu"/>
+                                                <constraint firstItem="8vG-S6-WZ1" firstAttribute="leading" secondItem="EKh-yO-XdZ" secondAttribute="leading" constant="8" id="JDt-el-kPW"/>
+                                                <constraint firstAttribute="trailing" secondItem="n20-l7-9QR" secondAttribute="trailing" constant="8" id="NC9-dn-ywa"/>
+                                                <constraint firstItem="8vG-S6-WZ1" firstAttribute="top" secondItem="n20-l7-9QR" secondAttribute="bottom" constant="8" id="NHc-6o-jUP"/>
+                                                <constraint firstAttribute="bottom" secondItem="8vG-S6-WZ1" secondAttribute="bottom" constant="8" id="RAQ-R9-Hx5"/>
+                                                <constraint firstItem="n20-l7-9QR" firstAttribute="leading" secondItem="EKh-yO-XdZ" secondAttribute="leading" constant="8" id="hti-1p-jjV"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="tweetText" destination="n20-l7-9QR" id="N9Y-Og-CcO"/>
+                                            <outlet property="userNameText" destination="8vG-S6-WZ1" id="f3p-2i-3MO"/>
                                             <segue destination="y8B-6y-fqq" kind="show" identifier="showDetailSegue" id="v3c-bN-p60"/>
                                         </connections>
                                     </tableViewCell>
@@ -70,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="874" y="112"/>
+            <point key="canvasLocation" x="872.79999999999995" y="111.99400299850076"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="DbG-Tu-FKc">

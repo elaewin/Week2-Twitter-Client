@@ -12,6 +12,7 @@ class TweetTableViewCell: UITableViewCell {
     
     @IBOutlet weak var tweetText: UILabel!
     
+    @IBOutlet weak var userNameText: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

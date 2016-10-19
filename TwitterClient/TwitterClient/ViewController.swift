@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     var allTweets = [Tweet]() {
@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         
         update()
     }
-
+    
     func update() {
         API.shared.getTweets { (tweets) in
             if tweets != nil {
@@ -54,13 +54,13 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-        
+    
 }
 
 // MARK: TableViewDataSource and TableViewDelegate methods
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allTweets.count
     }

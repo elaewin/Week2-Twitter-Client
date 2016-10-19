@@ -92,12 +92,36 @@
                     <view key="view" contentMode="scaleToFill" id="Ux1-Vx-CbP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKn-F6-IrA">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGi-Km-0bh">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="AGi-Km-0bh" secondAttribute="trailing" constant="16" id="3XZ-am-TAj"/>
+                            <constraint firstItem="gKn-F6-IrA" firstAttribute="top" secondItem="dN2-G7-ggE" secondAttribute="bottom" constant="8" id="5WZ-Az-azr"/>
+                            <constraint firstItem="gKn-F6-IrA" firstAttribute="leading" secondItem="Ux1-Vx-CbP" secondAttribute="leading" constant="16" id="EeA-n8-pLu"/>
+                            <constraint firstItem="AGi-Km-0bh" firstAttribute="leading" secondItem="Ux1-Vx-CbP" secondAttribute="leading" constant="16" id="Qqc-lz-JkA"/>
+                            <constraint firstAttribute="trailing" secondItem="gKn-F6-IrA" secondAttribute="trailing" constant="16" id="lTz-YX-5xU"/>
+                            <constraint firstItem="AGi-Km-0bh" firstAttribute="top" secondItem="gKn-F6-IrA" secondAttribute="bottom" constant="8" id="nWQ-1r-YJ2"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tweetUserViewLabel" destination="gKn-F6-IrA" id="io2-a1-QV3"/>
+                        <outlet property="tweetViewLabel" destination="AGi-Km-0bh" id="2Xg-Id-I4D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jO6-tr-cSq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1588" y="112"/>
+            <point key="canvasLocation" x="1588" y="111.99400299850076"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zaF-Ue-cDc">

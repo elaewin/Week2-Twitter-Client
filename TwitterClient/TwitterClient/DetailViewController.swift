@@ -9,6 +9,11 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+        
+    @IBOutlet weak var tweetViewLabel: UILabel!
+    
+    @IBOutlet weak var tweetUserViewLabel: UILabel!
+    
     
     var tweet: Tweet!
 
@@ -37,5 +42,5 @@ class DetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

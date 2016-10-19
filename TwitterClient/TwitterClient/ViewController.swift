@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    
+    
+    
     var allTweets = [Tweet]() {
         didSet {
             tableView.reloadData()

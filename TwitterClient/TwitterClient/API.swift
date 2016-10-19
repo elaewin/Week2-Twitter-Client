@@ -147,7 +147,7 @@ class API {
 //        else {
 //            alertMsg(<#T##userMessage: String##String#>)
 //        }
-        
+    
         self.login { (account) in
             if account != nil {
                 API.shared.account = account!
@@ -157,7 +157,5 @@ class API {
         }
             
     }
-
-    
 
 }

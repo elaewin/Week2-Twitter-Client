@@ -8,5 +8,17 @@ var str = "Hello, playground"
 
 // A serial queue is created using:
 
-let staticQueue = OperationQueue.main
+let serialQueue = OperationQueue.main
+
+
+//from lecture - create a different serial queue instead of using main.
+
+let mySerialQueue = OperationQueue()
+mySerialQueue.maxConcurrentOperationCount = 1
+
+mySerialQueue.addOperation {
+    //insert code here
+}
+
+
 

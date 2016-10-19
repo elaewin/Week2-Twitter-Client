@@ -8,4 +8,4 @@ var str = "Hello, playground"
 
 // A serial queue is created using:
 
-OperationQueue.main
+let staticQueue = OperationQueue.main

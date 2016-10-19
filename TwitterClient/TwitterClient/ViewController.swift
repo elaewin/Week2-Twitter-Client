@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import Accounts
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    //add a variable for current account
+    // var currentAccount : ACAccount?
     
     var allTweets = [Tweet]() {
         didSet {
@@ -21,6 +25,10 @@ class ViewController: UIViewController {
     // called only the first time that the view loads
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        updateFor(account: API.shared.accounts?.first)
+        
+        //change updateFor so account = current account
         
         setupTableView()
         // Do any additional setup after loading the view, typically from a nib.
@@ -37,14 +45,14 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        update()
-    }
-    
-    func update() {
-        API.shared.getTweets { (tweets) in
-            if tweets != nil {
-                OperationQueue.main.addOperation {
-                    self.allTweets = tweets!
+        func updateFor(account: ACAccount) {
+            API.shared.getTweetsFor(account: account, completion: { (tweets) in
+                API.shared.getTweetsFor(account: account) { (tweets) in
+                    OperationQueue.main.addOperation {
+                        if tweets != nil {
+                            self.allTweets = tweets!
+                        }
+                    }
                 }
             }
         }

@@ -11,7 +11,7 @@ import Accounts
 import Social
 import UIKit
 
-typealias accountCompletion = (ACAccount?) -> ()
+typealias accountsCompletion = ([ACAccount]?) -> ()
 typealias userCompletion = (User?) -> ()
 typealias tweetsCompletion = ([Tweet]?) -> ()
 
@@ -21,10 +21,10 @@ class API {
     
     static let shared = API()
     
-    var account : ACAccount?
+    var accounts : [ACAccount]?
     
     // private so can only be accessed w/in this class
-    private func login(completion: @escaping accountCompletion) {
+    private func login(completion: @escaping accountsCompletion) {
         
         let accountStore = ACAccountStore()
         let accountType = accountStore.accountType(withAccountTypeIdentifier: ACAccountTypeIdentifierTwitter)
@@ -38,8 +38,8 @@ class API {
             }
             
             if success {
-                if let account = accountStore.accounts(with: accountType).first as? ACAccount {
-                    completion(account)
+                if let accounts = accountStore.accounts(with: accountType) as? [ACAccount] {
+                    completion(accounts)
                 } else {
                     print("UNSUCCESSFUL: No Twitter account found on device!")
                     completion(nil)
@@ -57,7 +57,7 @@ class API {
         
         if let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, url: url, parameters: nil) {
             
-            request.account = self.account
+            request.account = self.accounts?.first
             
             request.perform(handler: { (data, response, error) in
                 
@@ -98,13 +98,13 @@ class API {
         
     }
     
-    private func updateTimeLine(completion: @escaping tweetsCompletion) {
+    private func updateTimeLineFor(account: ACAccount, completion: @escaping tweetsCompletion) {
         
         let url = URL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")
         
         if let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, url: url, parameters: nil) {
             
-            request.account = self.account
+            request.account = account
             
             request.perform(handler: { (data, response, error) in
                 
@@ -140,18 +140,22 @@ class API {
         
     }
     
-    func getTweets(completion: @escaping tweetsCompletion) {
-        if self.account != nil {
-            self.updateTimeLine(completion: completion)
+    func getTweetsFor(account: ACAccount?, completion: @escaping tweetsCompletion) {
+        if account != nil {
+            self.updateTimeLineFor(account: account!, completion: completion)
         }
 //        else {
 //            alertMsg("string")
 //        }
         
-        self.login { (account) in
-            if account != nil {
-                API.shared.account = account!
-                self.updateTimeLine(completion: completion)
+        self.login { (accounts) in
+            if accounts != nil {
+                self.accounts = accounts!
+                if account != nil {
+                    self.updateTimeLineFor(account: account, completion: completion)
+                } else {
+                    self.updateTimeLineFor(account: accounts!.first!, completion: completion)
+                }
             }
             completion(nil)
         }

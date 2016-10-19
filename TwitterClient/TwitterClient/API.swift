@@ -143,10 +143,11 @@ class API {
     func getTweets(completion: @escaping tweetsCompletion) {
         if self.account != nil {
             self.updateTimeLine(completion: completion)
-        } else {
-            alertMsg(<#T##userMessage: String##String#>)
         }
-        
+//        else {
+//            alertMsg(<#T##userMessage: String##String#>)
+//        }
+    
         self.login { (account) in
             if account != nil {
                 API.shared.account = account!
@@ -156,7 +157,5 @@ class API {
         }
             
     }
-
-    
 
 }

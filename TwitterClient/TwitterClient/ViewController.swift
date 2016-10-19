@@ -12,6 +12,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     var allTweets = [Tweet]() {
         didSet {
             tableView.reloadData()
@@ -31,6 +33,8 @@ class ViewController: UIViewController {
     func setupTableView() {
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.tableView.estimatedRowHeight = 75
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     // This func is called every time the view appears on screen
@@ -41,11 +45,28 @@ class ViewController: UIViewController {
     }
 
     func update() {
+        
+        activityIndicator.startAnimating()
+        
         API.shared.getTweets { (tweets) in
             if tweets != nil {
                 OperationQueue.main.addOperation {
                     self.allTweets = tweets!
+                    self.activityIndicator.stopAnimating()
                 }
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if segue.identifier == "showDetailSegue" {
+            let selectedIndex = tableView.indexPathForSelectedRow!.row
+            let selectedTweet = self.allTweets[selectedIndex]
+            
+            if let destinationViewController = segue.destination as? DetailViewController {
+                destinationViewController.tweet = selectedTweet
             }
         }
     }
@@ -67,14 +88,16 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as! TweetTableViewCell
         
         let currentTweet = self.allTweets[indexPath.row]
         
-        cell.textLabel?.text = currentTweet.text
+        // can do this because we force cast the cell as TweetTableViewCell two lines of code above.
+        cell.tweetText.text = currentTweet.text
         
         cell.detailTextLabel?.text = currentTweet.user?.name
         
+        // polymporphism in action: actually now returning TweetTableViewCell now, because it is a subclass of UITableViewCell.
         return cell
     }
     

@@ -17,6 +17,7 @@
 		556F04FD1DB543DB0086FC42 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556F04FC1DB543DB0086FC42 /* Tweet.swift */; };
 		556F05001DB54F810086FC42 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556F04FF1DB54F810086FC42 /* JSONParser.swift */; };
 		55A7B8B61DB69E2500E8153F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7B8B51DB69E2500E8153F /* API.swift */; };
+		55A7B8BB1DB6F78400E8153F /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7B8BA1DB6F78400E8153F /* AlertController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		556F04FF1DB54F810086FC42 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		55A7B8B51DB69E2500E8153F /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		55A7B8B71DB6C65D00E8153F /* day7lab.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = day7lab.playground; sourceTree = "<group>"; };
+		55A7B8BA1DB6F78400E8153F /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				556F04E81DB542670086FC42 /* ViewController.swift */,
+				55A7B8BA1DB6F78400E8153F /* AlertController.swift */,
 				55A7B8B51DB69E2500E8153F /* API.swift */,
 			);
 			name = Controller;
@@ -182,6 +185,7 @@
 				556F05001DB54F810086FC42 /* JSONParser.swift in Sources */,
 				556F04E71DB542670086FC42 /* AppDelegate.swift in Sources */,
 				556F04FB1DB543CB0086FC42 /* User.swift in Sources */,
+				55A7B8BB1DB6F78400E8153F /* AlertController.swift in Sources */,
 				55A7B8B61DB69E2500E8153F /* API.swift in Sources */,
 				556F04FD1DB543DB0086FC42 /* Tweet.swift in Sources */,
 			);

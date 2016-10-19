@@ -9,6 +9,7 @@
 import Foundation
 import Accounts
 import Social
+import UIKit
 
 typealias accountCompletion = (ACAccount?) -> ()
 typealias userCompletion = (User?) -> ()
@@ -142,6 +143,8 @@ class API {
     func getTweets(completion: @escaping tweetsCompletion) {
         if self.account != nil {
             self.updateTimeLine(completion: completion)
+        } else {
+            alertMsg(<#T##userMessage: String##String#>)
         }
         
         self.login { (account) in
@@ -153,5 +156,7 @@ class API {
         }
             
     }
+
+    
 
 }

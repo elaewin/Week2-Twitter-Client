@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 //MARK: alert message
-// from http://stackoverflow.com/questions/39959907/alert-messsage-swift-3
+// working from example at http://stackoverflow.com/questions/39959907/alert-messsage-swift-3
 func alertMsg (_ userMessage: String) {
     
     let alert = UIAlertController(title: "Alert!", message: userMessage, preferredStyle: .alert)
@@ -19,6 +19,6 @@ func alertMsg (_ userMessage: String) {
     
     alert.addAction(okAction)
     
-    present(alert, animated: true, completion: nil)
+    self.present(alert, animated: true, completion: nil)
     
 }

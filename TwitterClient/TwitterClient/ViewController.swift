@@ -14,20 +14,22 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    
-    
-    
     var allTweets = [Tweet]() {
         didSet {
             tableView.reloadData()
         }
     }
     
+    var profileInfo: User?
+        
+    
     // called only the first time that the view loads
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupTableView()
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
         
     }
@@ -72,8 +74,15 @@ class ViewController: UIViewController {
                 destinationViewController.tweet = selectedTweet
             }
         }
+        
+//        if segue.identifier == "showProfileSegue" {
+//            if let profileViewController = segue.destination as? ProfileViewController {
+//                profileViewController.user = self.profileInfo
+//            }
+//        }
     }
-    
+
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -1,5 +1,5 @@
 //
-//  DetailViewController.swift
+//  ProfileViewController.swift
 //  TwitterClient
 //
 //  Created by Erica Winberry on 10/19/16.
@@ -8,24 +8,33 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
-        
-    @IBOutlet weak var tweetViewLabel: UILabel!
+class ProfileViewController: UIViewController {
     
-    @IBOutlet weak var tweetUserViewLabel: UILabel!
+    @IBOutlet weak var profileNameText: UILabel!
     
+    @IBOutlet weak var screenNameText: UILabel!
     
-    var tweet: Tweet!
-
+    @IBOutlet weak var locationTextLabel: UILabel!
+    
+    @IBOutlet weak var followersTextLabel: UILabel!
+    
+    @IBOutlet weak var friendsTextLabel: UILabel!
+    
+    @IBOutlet weak var descriptionTextLabel: UILabel!
+    
+    var user: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tweetUserViewLabel.text = tweet.user?.name
-        tweetViewLabel.text = tweet.text
+        API.shared.getUserAccount(completion: { (user) in
+            OperationQueue.main.addOperation {
+                self.user = user
+                print(self.user?.name)
+            }
+        })
         
-//        print("User's name: \(tweet.user?.name)")
-//        print("Tweet text: \(tweet.text)")
-//        print("Retweet?: \(tweet.retweet)")
+        profileNameText.text = user?.name
         
         // Do any additional setup after loading the view.
     }
@@ -45,9 +54,5 @@ class DetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
+
 }
-
-
-
-

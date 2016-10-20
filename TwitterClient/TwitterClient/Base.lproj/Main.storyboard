@@ -157,16 +157,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="followers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufn-RP-hJL">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="friends" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gad-yh-Ybf">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2Z-yG-or5">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -177,28 +167,20 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="WAx-QC-Ung" secondAttribute="trailing" constant="8" id="1nK-ah-92H"/>
                             <constraint firstItem="WAx-QC-Ung" firstAttribute="top" secondItem="1Oz-lZ-rrk" secondAttribute="bottom" constant="8" id="62P-wR-0j5"/>
-                            <constraint firstItem="gad-yh-Ybf" firstAttribute="leading" secondItem="3vF-73-KZZ" secondAttribute="leading" constant="8" id="Fz1-50-lAN"/>
-                            <constraint firstItem="Z2Z-yG-or5" firstAttribute="top" secondItem="gad-yh-Ybf" secondAttribute="bottom" constant="8" id="I8x-sY-uS6"/>
                             <constraint firstItem="poi-hq-tbx" firstAttribute="top" secondItem="1NL-4s-gSW" secondAttribute="bottom" constant="8" id="KTy-tL-ybn"/>
                             <constraint firstAttribute="trailing" secondItem="poi-hq-tbx" secondAttribute="trailing" constant="8" id="MdT-sK-ePU"/>
-                            <constraint firstItem="Ufn-RP-hJL" firstAttribute="leading" secondItem="3vF-73-KZZ" secondAttribute="leading" constant="8" id="RCs-I7-Y2D"/>
-                            <constraint firstItem="gad-yh-Ybf" firstAttribute="top" secondItem="Ufn-RP-hJL" secondAttribute="bottom" constant="8" id="TcJ-ul-SnC"/>
-                            <constraint firstAttribute="trailing" secondItem="gad-yh-Ybf" secondAttribute="trailing" constant="8" id="Ty1-aO-bQ1"/>
-                            <constraint firstAttribute="trailing" secondItem="Z2Z-yG-or5" secondAttribute="trailing" constant="8" id="e5L-t1-Orv"/>
+                            <constraint firstItem="Z2Z-yG-or5" firstAttribute="top" secondItem="poi-hq-tbx" secondAttribute="bottom" constant="8" id="dL8-wl-2Xn"/>
                             <constraint firstItem="1NL-4s-gSW" firstAttribute="top" secondItem="WAx-QC-Ung" secondAttribute="bottom" constant="8" id="es8-np-6nb"/>
                             <constraint firstAttribute="trailing" secondItem="1NL-4s-gSW" secondAttribute="trailing" constant="8" id="gU5-wT-JNX"/>
-                            <constraint firstItem="Ufn-RP-hJL" firstAttribute="top" secondItem="poi-hq-tbx" secondAttribute="bottom" constant="8" id="jBM-cN-rmU"/>
-                            <constraint firstItem="Z2Z-yG-or5" firstAttribute="leading" secondItem="3vF-73-KZZ" secondAttribute="leading" constant="8" id="lN6-z7-3oT"/>
+                            <constraint firstItem="Z2Z-yG-or5" firstAttribute="leading" secondItem="3vF-73-KZZ" secondAttribute="leading" constant="8" id="jvx-bW-hB1"/>
+                            <constraint firstAttribute="trailing" secondItem="Z2Z-yG-or5" secondAttribute="trailing" constant="8" id="krx-Jg-wfa"/>
                             <constraint firstItem="poi-hq-tbx" firstAttribute="leading" secondItem="3vF-73-KZZ" secondAttribute="leading" constant="8" id="mIY-6P-HqA"/>
                             <constraint firstItem="WAx-QC-Ung" firstAttribute="leading" secondItem="3vF-73-KZZ" secondAttribute="leading" constant="8" id="okh-jk-EOb"/>
-                            <constraint firstAttribute="trailing" secondItem="Ufn-RP-hJL" secondAttribute="trailing" constant="8" id="owA-Qj-Nfi"/>
                             <constraint firstItem="1NL-4s-gSW" firstAttribute="leading" secondItem="3vF-73-KZZ" secondAttribute="leading" constant="8" id="r1G-Os-W25"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="descriptionTextLabel" destination="Z2Z-yG-or5" id="m1y-Ws-iSx"/>
-                        <outlet property="followersTextLabel" destination="Ufn-RP-hJL" id="Vbh-zg-o50"/>
-                        <outlet property="friendsTextLabel" destination="gad-yh-Ybf" id="sxz-3F-OX9"/>
                         <outlet property="locationTextLabel" destination="poi-hq-tbx" id="kZi-Zj-J3W"/>
                         <outlet property="profileNameText" destination="WAx-QC-Ung" id="3BB-mV-mBH"/>
                         <outlet property="screenNameText" destination="1NL-4s-gSW" id="tZ2-2k-sje"/>

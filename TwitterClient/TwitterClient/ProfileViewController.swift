@@ -16,10 +16,6 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var locationTextLabel: UILabel!
     
-    @IBOutlet weak var followersTextLabel: UILabel!
-    
-    @IBOutlet weak var friendsTextLabel: UILabel!
-    
     @IBOutlet weak var descriptionTextLabel: UILabel!
     
     var user: User?
@@ -31,10 +27,19 @@ class ProfileViewController: UIViewController {
             OperationQueue.main.addOperation {
                 self.user = user
                 print(self.user?.name)
+                self.profileNameText.text = self.user?.name
+                if self.user?.screenName != nil {
+                    self.screenNameText.text = "@" + (self.user?.screenName)!
+                }
+                if self.user?.location != nil {
+                    self.locationTextLabel.text = "Location: " + (self.user?.location)!
+                }
+                if self.user?.description != nil {
+                    self.descriptionTextLabel.text = self.user?.description
+                    
+                }
             }
         })
-        
-        profileNameText.text = user?.name
         
         // Do any additional setup after loading the view.
     }

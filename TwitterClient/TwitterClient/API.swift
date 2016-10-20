@@ -81,7 +81,7 @@ class API {
                             completion(user)
                         }
                     } catch {
-                        print("Error: Cannot serialize data")
+                        print("Error: Cannot obtain credentials from Twitter.")
                     }
                 case 400...499:
                     print("\(response!.statusCode): Client-side error")
@@ -91,7 +91,7 @@ class API {
                     print("Response came back with unrecognized Status Code \(response!.statusCode)")
                 }
                 
-                completion(nil)
+//                completion(nil)
                 
             })
         }
@@ -150,12 +150,20 @@ class API {
     
         self.login { (account) in
             if account != nil {
-                API.shared.account = account!
+                self.account = account!
                 self.updateTimeLine(completion: completion)
             }
             completion(nil)
         }
             
     }
-
+    
+    func getUserAccount(completion: @escaping userCompletion) {
+        if self.account != nil {
+            self.getOAuthUser(completion: completion)
+        }
+        completion(nil)
+        // add something here in case there is no user account
+    }
+    
 }

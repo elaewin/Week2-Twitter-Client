@@ -9,14 +9,23 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+        
+    @IBOutlet weak var tweetViewLabel: UILabel!
+    
+    @IBOutlet weak var tweetUserViewLabel: UILabel!
+    
     
     var tweet: Tweet!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("User's name: \(tweet.user?.name)")
-        print("Tweet text: \(tweet.text)")
+        tweetUserViewLabel.text = tweet.user?.name
+        tweetViewLabel.text = tweet.text
+        
+//        print("User's name: \(tweet.user?.name)")
+//        print("Tweet text: \(tweet.text)")
+//        print("Retweet?: \(tweet.retweet)")
         
         // Do any additional setup after loading the view.
     }
@@ -36,5 +45,9 @@ class DetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
+
+
+
+

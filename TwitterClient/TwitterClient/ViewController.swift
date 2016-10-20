@@ -20,11 +20,16 @@ class ViewController: UIViewController {
         }
     }
     
+    var profileInfo: User?
+        
+    
     // called only the first time that the view loads
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupTableView()
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
         
     }
@@ -33,7 +38,7 @@ class ViewController: UIViewController {
     func setupTableView() {
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        self.tableView.estimatedRowHeight = 75
+        self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
@@ -69,8 +74,15 @@ class ViewController: UIViewController {
                 destinationViewController.tweet = selectedTweet
             }
         }
+        
+//        if segue.identifier == "showProfileSegue" {
+//            if let profileViewController = segue.destination as? ProfileViewController {
+//                profileViewController.user = self.profileInfo
+//            }
+//        }
     }
-    
+
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -95,7 +107,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         // can do this because we force cast the cell as TweetTableViewCell two lines of code above.
         cell.tweetText.text = currentTweet.text
         
-        cell.detailTextLabel?.text = currentTweet.user?.name
+        cell.userNameText.text = currentTweet.user?.name
         
         // polymporphism in action: actually now returning TweetTableViewCell now, because it is a subclass of UITableViewCell.
         return cell

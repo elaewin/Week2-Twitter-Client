@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		55429CCA1DB7F43F0095BF32 /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55429CC91DB7F43F0095BF32 /* TweetTableViewCell.swift */; };
 		55429CCC1DB8037A0095BF32 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55429CCB1DB8037A0095BF32 /* DetailViewController.swift */; };
+		55429CD01DB83C900095BF32 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55429CCF1DB83C900095BF32 /* ProfileViewController.swift */; };
 		556F04E71DB542670086FC42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556F04E61DB542670086FC42 /* AppDelegate.swift */; };
 		556F04E91DB542670086FC42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556F04E81DB542670086FC42 /* ViewController.swift */; };
 		556F04EC1DB542670086FC42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556F04EA1DB542670086FC42 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		55429CC91DB7F43F0095BF32 /* TweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
 		55429CCB1DB8037A0095BF32 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		55429CCF1DB83C900095BF32 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		556F04E31DB542670086FC42 /* TwitterClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		556F04E61DB542670086FC42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		556F04E81DB542670086FC42 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			children = (
 				556F04E81DB542670086FC42 /* ViewController.swift */,
 				55429CCB1DB8037A0095BF32 /* DetailViewController.swift */,
+				55429CCF1DB83C900095BF32 /* ProfileViewController.swift */,
 				55A7B8BA1DB6F78400E8153F /* AlertController.swift */,
 				55A7B8B51DB69E2500E8153F /* API.swift */,
 			);
@@ -189,6 +192,7 @@
 			files = (
 				55429CCC1DB8037A0095BF32 /* DetailViewController.swift in Sources */,
 				556F04E91DB542670086FC42 /* ViewController.swift in Sources */,
+				55429CD01DB83C900095BF32 /* ProfileViewController.swift in Sources */,
 				556F05001DB54F810086FC42 /* JSONParser.swift in Sources */,
 				556F04E71DB542670086FC42 /* AppDelegate.swift in Sources */,
 				556F04FB1DB543CB0086FC42 /* User.swift in Sources */,

@@ -18,15 +18,19 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var descriptionTextLabel: UILabel!
     
+    @IBOutlet weak var profileActivityIndicator: UIActivityIndicatorView!
+    
     var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        profileActivityIndicator.startAnimating()
+        
         API.shared.getUserAccount(completion: { (user) in
             OperationQueue.main.addOperation {
                 self.user = user
-                print(self.user?.name)
+                self.profileActivityIndicator.stopAnimating()
                 self.profileNameText.text = self.user?.name
                 if self.user?.screenName != nil {
                     self.screenNameText.text = "@" + (self.user?.screenName)!

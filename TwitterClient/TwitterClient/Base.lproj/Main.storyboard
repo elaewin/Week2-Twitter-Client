@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,9 +21,14 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yUz-uO-EHp">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="fIJ-3R-Tcd">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="0.84881465517241383" colorSpace="calibratedRGB"/>
+                                </imageView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="88" id="ecV-Tb-Dw4" customClass="TweetTableViewCell" customModule="TwitterClient" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="88"/>
+                                        <rect key="frame" x="0.0" y="92" width="375" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ecV-Tb-Dw4" id="EKh-yO-XdZ">
                                             <frame key="frameInset" width="375" height="87"/>
@@ -42,6 +48,7 @@
                                             <constraints>
                                                 <constraint firstItem="n20-l7-9QR" firstAttribute="leading" secondItem="EKh-yO-XdZ" secondAttribute="leading" constant="8" id="Iq9-ym-kbS"/>
                                                 <constraint firstItem="8vG-S6-WZ1" firstAttribute="leading" secondItem="EKh-yO-XdZ" secondAttribute="leading" constant="8" id="Kmc-ja-gYj"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="n20-l7-9QR" secondAttribute="bottom" constant="8" id="U6X-Aq-zQe"/>
                                                 <constraint firstItem="n20-l7-9QR" firstAttribute="top" secondItem="8vG-S6-WZ1" secondAttribute="bottom" constant="8" id="Uoe-ah-gkx"/>
                                                 <constraint firstAttribute="trailing" secondItem="8vG-S6-WZ1" secondAttribute="trailing" constant="8" id="XCD-8d-PwD"/>
                                                 <constraint firstAttribute="trailing" secondItem="n20-l7-9QR" secondAttribute="trailing" constant="8" id="bCB-pm-hOI"/>
@@ -164,6 +171,12 @@
                                 <frame key="frameInset" minX="177" minY="323" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9VF-r2-4wN">
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="bBB-La-HcP" eventType="touchUpInside" id="YbJ-CD-fVu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -171,6 +184,8 @@
                             <constraint firstItem="WAx-QC-Ung" firstAttribute="top" secondItem="1Oz-lZ-rrk" secondAttribute="bottom" constant="8" id="62P-wR-0j5"/>
                             <constraint firstItem="poi-hq-tbx" firstAttribute="top" secondItem="1NL-4s-gSW" secondAttribute="bottom" constant="8" id="KTy-tL-ybn"/>
                             <constraint firstAttribute="trailing" secondItem="poi-hq-tbx" secondAttribute="trailing" constant="8" id="MdT-sK-ePU"/>
+                            <constraint firstAttribute="trailing" secondItem="9VF-r2-4wN" secondAttribute="trailing" constant="16" id="Rm7-Cc-03N"/>
+                            <constraint firstItem="9VF-r2-4wN" firstAttribute="top" secondItem="1Oz-lZ-rrk" secondAttribute="bottom" constant="16" id="cPn-v4-pjD"/>
                             <constraint firstItem="Z2Z-yG-or5" firstAttribute="top" secondItem="poi-hq-tbx" secondAttribute="bottom" constant="8" id="dL8-wl-2Xn"/>
                             <constraint firstItem="1NL-4s-gSW" firstAttribute="top" secondItem="WAx-QC-Ung" secondAttribute="bottom" constant="8" id="es8-np-6nb"/>
                             <constraint firstAttribute="trailing" secondItem="1NL-4s-gSW" secondAttribute="trailing" constant="8" id="gU5-wT-JNX"/>

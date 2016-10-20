@@ -28,19 +28,20 @@ class ProfileViewController: UIViewController {
         profileActivityIndicator.startAnimating()
         
         API.shared.getUserAccount(completion: { (user) in
+            self.user = user
             OperationQueue.main.addOperation {
-                self.user = user
                 self.profileActivityIndicator.stopAnimating()
                 self.profileNameText.text = self.user?.name
                 if self.user?.screenName != nil {
                     self.screenNameText.text = "@" + (self.user?.screenName)!
-                }
+                } 
                 if self.user?.location != nil {
                     self.locationTextLabel.text = "Location: " + (self.user?.location)!
                 }
                 if self.user?.description != nil {
                     self.descriptionTextLabel.text = self.user?.description
-                    
+                } else {
+                    self.descriptionTextLabel.text = ""
                 }
             }
         })
@@ -53,7 +54,13 @@ class ProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func doneButtonPressed(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
+    }
 
+    
+    
+    
     /*
     // MARK: - Navigation
 

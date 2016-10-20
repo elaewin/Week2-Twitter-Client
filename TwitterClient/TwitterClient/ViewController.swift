@@ -20,8 +20,7 @@ class ViewController: UIViewController {
         }
     }
     
-    var profileInfo: User?
-        
+//    var profileInfo: User?
     
     // called only the first time that the view loads
     override func viewDidLoad() {
@@ -74,7 +73,6 @@ class ViewController: UIViewController {
                 destinationViewController.tweet = selectedTweet
             }
         }
-        
 //        if segue.identifier == "showProfileSegue" {
 //            if let profileViewController = segue.destination as? ProfileViewController {
 //                profileViewController.user = self.profileInfo

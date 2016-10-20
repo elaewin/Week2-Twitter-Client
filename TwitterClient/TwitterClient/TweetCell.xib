@@ -3,19 +3,32 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="15m-JC-LmI">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="115" id="15m-JC-LmI">
+            <rect key="frame" x="0.0" y="0.0" width="598" height="115"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="15m-JC-LmI" id="DoL-AD-a23">
-                <frame key="frameInset" width="375" height="43"/>
+                <frame key="frameInset" width="598" height="114.5"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KJU-9x-hSm">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="0x2-TV-jh8"/>
+                            <constraint firstAttribute="height" constant="80" id="49r-Fp-x74"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="KJU-9x-hSm" firstAttribute="leading" secondItem="DoL-AD-a23" secondAttribute="leadingMargin" constant="8" id="9u5-so-cjL"/>
+                    <constraint firstItem="KJU-9x-hSm" firstAttribute="top" secondItem="DoL-AD-a23" secondAttribute="topMargin" constant="8" id="l3w-I7-kWm"/>
+                </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="-39" y="2"/>
+            <point key="canvasLocation" x="-51" y="14.5"/>
         </tableViewCell>
     </objects>
 </document>

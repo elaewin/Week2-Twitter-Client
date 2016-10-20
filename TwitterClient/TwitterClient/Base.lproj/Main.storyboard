@@ -162,11 +162,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2Z-yG-or5">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="PeS-t2-eYv">
                                 <frame key="frameInset" minX="177" minY="323" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -177,27 +172,50 @@
                                     <action selector="doneButtonPressed:" destination="bBB-La-HcP" eventType="touchUpInside" id="YbJ-CD-fVu"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="followers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBP-VZ-ba5">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFR-AW-MJR">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2Z-yG-or5">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="WAx-QC-Ung" secondAttribute="trailing" constant="8" id="1nK-ah-92H"/>
                             <constraint firstItem="WAx-QC-Ung" firstAttribute="top" secondItem="1Oz-lZ-rrk" secondAttribute="bottom" constant="8" id="62P-wR-0j5"/>
+                            <constraint firstItem="cFR-AW-MJR" firstAttribute="leading" secondItem="3vF-73-KZZ" secondAttribute="leading" constant="8" id="Abm-W8-f1W"/>
+                            <constraint firstItem="Z2Z-yG-or5" firstAttribute="leading" secondItem="3vF-73-KZZ" secondAttribute="leading" constant="8" id="DIq-z4-DBu"/>
+                            <constraint firstItem="Z2Z-yG-or5" firstAttribute="top" secondItem="cFR-AW-MJR" secondAttribute="bottom" constant="8" id="K0L-Sg-GQf"/>
                             <constraint firstItem="poi-hq-tbx" firstAttribute="top" secondItem="1NL-4s-gSW" secondAttribute="bottom" constant="8" id="KTy-tL-ybn"/>
                             <constraint firstAttribute="trailing" secondItem="poi-hq-tbx" secondAttribute="trailing" constant="8" id="MdT-sK-ePU"/>
+                            <constraint firstAttribute="trailing" secondItem="dBP-VZ-ba5" secondAttribute="trailing" constant="8" id="R8S-ji-saD"/>
                             <constraint firstAttribute="trailing" secondItem="9VF-r2-4wN" secondAttribute="trailing" constant="16" id="Rm7-Cc-03N"/>
+                            <constraint firstItem="cFR-AW-MJR" firstAttribute="top" secondItem="dBP-VZ-ba5" secondAttribute="bottom" constant="8" id="U1m-vH-WJH"/>
+                            <constraint firstAttribute="trailing" secondItem="cFR-AW-MJR" secondAttribute="trailing" constant="8" id="XCB-Xa-hfI"/>
                             <constraint firstItem="9VF-r2-4wN" firstAttribute="top" secondItem="1Oz-lZ-rrk" secondAttribute="bottom" constant="16" id="cPn-v4-pjD"/>
-                            <constraint firstItem="Z2Z-yG-or5" firstAttribute="top" secondItem="poi-hq-tbx" secondAttribute="bottom" constant="8" id="dL8-wl-2Xn"/>
                             <constraint firstItem="1NL-4s-gSW" firstAttribute="top" secondItem="WAx-QC-Ung" secondAttribute="bottom" constant="8" id="es8-np-6nb"/>
                             <constraint firstAttribute="trailing" secondItem="1NL-4s-gSW" secondAttribute="trailing" constant="8" id="gU5-wT-JNX"/>
-                            <constraint firstItem="Z2Z-yG-or5" firstAttribute="leading" secondItem="3vF-73-KZZ" secondAttribute="leading" constant="8" id="jvx-bW-hB1"/>
-                            <constraint firstAttribute="trailing" secondItem="Z2Z-yG-or5" secondAttribute="trailing" constant="8" id="krx-Jg-wfa"/>
+                            <constraint firstItem="dBP-VZ-ba5" firstAttribute="top" secondItem="poi-hq-tbx" secondAttribute="bottom" constant="8" id="lYt-Zr-atE"/>
                             <constraint firstItem="poi-hq-tbx" firstAttribute="leading" secondItem="3vF-73-KZZ" secondAttribute="leading" constant="8" id="mIY-6P-HqA"/>
                             <constraint firstItem="WAx-QC-Ung" firstAttribute="leading" secondItem="3vF-73-KZZ" secondAttribute="leading" constant="8" id="okh-jk-EOb"/>
+                            <constraint firstItem="dBP-VZ-ba5" firstAttribute="leading" secondItem="3vF-73-KZZ" secondAttribute="leading" constant="8" id="pj4-2o-1oN"/>
+                            <constraint firstAttribute="trailing" secondItem="Z2Z-yG-or5" secondAttribute="trailing" constant="8" id="qB9-qe-CKf"/>
                             <constraint firstItem="1NL-4s-gSW" firstAttribute="leading" secondItem="3vF-73-KZZ" secondAttribute="leading" constant="8" id="r1G-Os-W25"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="descriptionTextLabel" destination="Z2Z-yG-or5" id="m1y-Ws-iSx"/>
+                        <outlet property="followersTextLabel" destination="dBP-VZ-ba5" id="WVi-tG-lcH"/>
+                        <outlet property="friendsTextLabel" destination="cFR-AW-MJR" id="2X5-6G-y42"/>
                         <outlet property="locationTextLabel" destination="poi-hq-tbx" id="kZi-Zj-J3W"/>
                         <outlet property="profileActivityIndicator" destination="PeS-t2-eYv" id="fQc-9a-dGU"/>
                         <outlet property="profileNameText" destination="WAx-QC-Ung" id="3BB-mV-mBH"/>
@@ -206,7 +224,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5YA-bm-OJg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="873" y="848"/>
+            <point key="canvasLocation" x="872.79999999999995" y="846.9265367316342"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zaF-Ue-cDc">

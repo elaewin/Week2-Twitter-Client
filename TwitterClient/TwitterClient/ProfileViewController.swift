@@ -16,6 +16,11 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var locationTextLabel: UILabel!
     
+    @IBOutlet weak var followersTextLabel: UILabel!
+    
+    @IBOutlet weak var friendsTextLabel: UILabel!
+    
+    
     @IBOutlet weak var descriptionTextLabel: UILabel!
     
     @IBOutlet weak var profileActivityIndicator: UIActivityIndicatorView!

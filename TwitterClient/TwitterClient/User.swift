@@ -12,7 +12,7 @@ import Foundation
 class User {
     
     let name: String
-    let profileImageUrlString: String
+    let profileImageUrl: String
     let screenName: String
     let location: String?
     let description: String?
@@ -24,7 +24,7 @@ class User {
         if let name = json["name"] as? String, let imageString = json["profile_image_url"] as? String, let screenName = json["screen_name"] as? String {
             
             self.name = name
-            self.profileImageUrlString = imageString
+            self.profileImageUrl = imageString
             self.screenName = screenName
             self.location = json["location"] as? String
             self.description = json["description"] as? String

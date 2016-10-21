@@ -16,6 +16,10 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var locationTextLabel: UILabel!
     
+    @IBOutlet weak var followersTextLabel: UILabel!
+    
+    @IBOutlet weak var friendsTextLabel: UILabel!
+    
     @IBOutlet weak var descriptionTextLabel: UILabel!
     
     @IBOutlet weak var profileActivityIndicator: UIActivityIndicatorView!
@@ -28,19 +32,22 @@ class ProfileViewController: UIViewController {
         profileActivityIndicator.startAnimating()
         
         API.shared.getUserAccount(completion: { (user) in
+            self.user = user
             OperationQueue.main.addOperation {
-                self.user = user
                 self.profileActivityIndicator.stopAnimating()
                 self.profileNameText.text = self.user?.name
                 if self.user?.screenName != nil {
                     self.screenNameText.text = "@" + (self.user?.screenName)!
-                }
+                } 
                 if self.user?.location != nil {
                     self.locationTextLabel.text = "Location: " + (self.user?.location)!
                 }
+                self.followersTextLabel.text = "# of Followers: \(self.user?.followersCount)"
+                self.friendsTextLabel.text = "# of Friends: " + String(describing: self.user?.friendsCount)
                 if self.user?.description != nil {
                     self.descriptionTextLabel.text = self.user?.description
-                    
+                } else {
+                    self.descriptionTextLabel.text = ""
                 }
             }
         })
@@ -53,7 +60,13 @@ class ProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func doneButtonPressed(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
+    }
 
+    
+    
+    
     /*
     // MARK: - Navigation
 

@@ -14,6 +14,7 @@ import UIKit
 typealias accountCompletion = (ACAccount?) -> ()
 typealias userCompletion = (User?) -> ()
 typealias tweetsCompletion = ([Tweet]?) -> ()
+typealias imageCompletion = (UIImage?) -> ()
 
 // class responsible for using accounts and social frameworks
 // singleton
@@ -98,11 +99,14 @@ class API {
         
     }
     
-    private func updateTimeLine(completion: @escaping tweetsCompletion) {
+    private func updateTimeLine(url: String, completion: @escaping tweetsCompletion) {
         
-        let url = URL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")
+//        let url = URL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")
         
-        if let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, url: url, parameters: nil) {
+        if let request = SLRequest(forServiceType: SLServiceTypeTwitter,
+                                   requestMethod: .GET,
+                                   url: URL(string: url),
+                                   parameters: nil) {
             
             request.account = self.account
             
@@ -142,7 +146,8 @@ class API {
     
     func getTweets(completion: @escaping tweetsCompletion) {
         if self.account != nil {
-            self.updateTimeLine(completion: completion)
+            self.updateTimeLine(url: "https://api.twitter.com/1.1/statuses/home_timeline.json",
+                                completion: completion)
         }
 //        else {
 //            alertMsg(<#T##userMessage: String##String#>)
@@ -151,7 +156,8 @@ class API {
         self.login { (account) in
             if account != nil {
                 self.account = account!
-                self.updateTimeLine(completion: completion)
+                self.updateTimeLine(url: "https://api.twitter.com/1.1/statuses/home_timeline.json",
+                                    completion: completion)
             }
             completion(nil)
         }
@@ -165,5 +171,39 @@ class API {
         completion(nil)
         // add something here in case there is no user account
     }
+    
+    func getUserTweetsFor(username: String, completion: @escaping tweetsCompletion) {
+        
+        self.updateTimeLine(url: "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=\(username)", completion: completion)
+        
+    }
+    
+    func getImageFor(urlString: String, completion: @escaping imageCompletion) {
+        
+        OperationQueue().addOperation {
+            guard let url = URL(string: urlString) else { return }
+            
+            print("URL is: \(url)")
+            
+            do {
+                let data = try Data(contentsOf: url)
+                guard let image = UIImage(data: data) else { return }
+                
+                OperationQueue.main.addOperation {
+                    completion(image)
+                }
+            } catch {
+                print("There was an error getting the data from the url for the UIImage.")
+                OperationQueue.main.addOperation {
+                    completion(nil)
+                }
+            }
+            
+        }
+        
+    }
+    
+    
+    
     
 }

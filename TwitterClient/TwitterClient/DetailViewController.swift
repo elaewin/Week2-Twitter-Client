@@ -9,11 +9,12 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    @IBOutlet weak var tweetUserViewLabel: UILabel!
         
     @IBOutlet weak var tweetViewLabel: UILabel!
     
-    @IBOutlet weak var tweetUserViewLabel: UILabel!
-    
+
     
     var tweet: Tweet!
 

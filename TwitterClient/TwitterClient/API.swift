@@ -183,6 +183,8 @@ class API {
         OperationQueue().addOperation {
             guard let url = URL(string: urlString) else { return }
             
+            print("URL is: \(url)")
+            
             do {
                 let data = try Data(contentsOf: url)
                 guard let image = UIImage(data: data) else { return }

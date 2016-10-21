@@ -20,7 +20,6 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var friendsTextLabel: UILabel!
     
-    
     @IBOutlet weak var descriptionTextLabel: UILabel!
     
     @IBOutlet weak var profileActivityIndicator: UIActivityIndicatorView!
@@ -43,6 +42,8 @@ class ProfileViewController: UIViewController {
                 if self.user?.location != nil {
                     self.locationTextLabel.text = "Location: " + (self.user?.location)!
                 }
+                self.followersTextLabel.text = "# of Followers: \(self.user?.followersCount)"
+                self.friendsTextLabel.text = "# of Friends: " + String(describing: self.user?.friendsCount)
                 if self.user?.description != nil {
                     self.descriptionTextLabel.text = self.user?.description
                 } else {

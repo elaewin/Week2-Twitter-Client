@@ -19,6 +19,7 @@ class TweetTableViewCell: UITableViewCell {
     var tweet: Tweet! {
         didSet {
             self.tweetLabel.text = tweet.text
+            
             if let user = tweet.user {
                 self.usernameLabel.text = user.name
                 if let image = SimpleCache.shared.image(key: user.profileImageUrl) {

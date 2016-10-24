@@ -41,6 +41,8 @@ class DetailViewController: UIViewController {
         tweetUserViewLabel.text = tweet.user?.name
         tweetViewLabel.text = tweet.text
         
+        
+        
 //        print("User's name: \(tweet.user?.name)")
 //        print("Tweet text: \(tweet.text)")
 //        print("Retweet?: \(tweet.retweet)")

@@ -14,9 +14,25 @@ class DetailViewController: UIViewController {
         
     @IBOutlet weak var tweetViewLabel: UILabel!
     
-
+    @IBOutlet weak var tweetDetailImageView: UIImageView!
     
-    var tweet: Tweet!
+    var tweet: Tweet! {
+        didSet {
+            if let user = tweet.user {
+                if let image = SimpleCache.shared.image(key: user.profileImageUrl) {
+                    tweetDetailImageView.image = image
+                    return
+                }
+                
+                API.shared.getImageFor(urlString: user.profileImageUrl, completion: { (image) in
+                    if image != nil {
+                        SimpleCache.shared.setImage(image!, with: user.profileImageUrl)
+                        self.tweetDetailImageView.image = image!
+                    }
+                })
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

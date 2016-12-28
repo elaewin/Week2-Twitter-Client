@@ -172,10 +172,11 @@ class API {
         // add something here in case there is no user account
     }
     
-    func getUserTweetsFor(username: String, completion: @escaping tweetsCompletion) {
-        
-        self.updateTimeLine(url: "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=\(username)", completion: completion)
-        
+    func getUserTweetsFor(user: User, completion: @escaping tweetsCompletion) {
+        if self.account != nil {
+            self.updateTimeLine(url: "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=\(user.screenName)", completion: completion)
+        }
+        completion(nil)
     }
     
     func getImageFor(urlString: String, completion: @escaping imageCompletion) {

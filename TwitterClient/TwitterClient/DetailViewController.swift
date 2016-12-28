@@ -16,58 +16,72 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var tweetDetailImageView: UIImageView!
     
+    @IBAction func userImageTapped(_ sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            print("Tap on user icon...")
+        }
+        self.performSegue(withIdentifier: "timelineViewControllerSegue", sender: sender)
+    }
+    
     var tweet: Tweet! 
-//    {
-//        didSet {
-//            if let user = tweet.user {
-//                if let image = SimpleCache.shared.image(key: user.profileImageUrl) {
-//                    tweetDetailImageView.image = image
-//                    return
-//                }
-//                
-//                API.shared.getImageFor(urlString: user.profileImageUrl, completion: { (image) in
-//                    if image != nil {
-//                        SimpleCache.shared.setImage(image!, with: user.profileImageUrl)
-//                        self.tweetDetailImageView.image = image!
-//                    }
-//                })
-//            }
-//        }
-//    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tweetUserViewLabel.text = tweet.user?.name
-        tweetViewLabel.text = tweet.text
+        if let userName = tweet.user?.name {
+            self.title = "Tweet from \(userName)"
+        }
         
+        self.tweetUserViewLabel.text = tweet.user?.name
+        self.tweetViewLabel.text = tweet.text
         
-        
-//        print("User's name: \(tweet.user?.name)")
-//        print("Tweet text: \(tweet.text)")
-//        print("Retweet?: \(tweet.retweet)")
-        
-        // Do any additional setup after loading the view.
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        if let user = tweet.user {
+            if let image = SimpleCache.shared.image(key: user.profileImageUrl) {
+                NSLog("Image: \(image)")
+                self.tweetDetailImageView.image = image
+                return
+            }
+            
+            API.shared.getImageFor(urlString: user.profileImageUrl, completion: { (image) in
+                if image != nil {
+                    SimpleCache.shared.setImage(image!, with: user.profileImageUrl)
+                    self.tweetDetailImageView.image = image!
+                }
+            })
+        }
     }
-    
+  
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+         super.prepare(for: segue, sender: sender)
+        
+//        if segue.identifier == "timelineViewControllerSegue" {
+//            let user = tweet.user
+//        }
+        
+        if let destinationViewController = segue.destination as? TimelineViewController {
+            destinationViewController.user = tweet.user
+        }
     }
-    */
     
 }
 
+//override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//    super.prepare(for: segue, sender: sender)
+//    
+//    if segue.identifier == "detailViewControllerSegue" {
+//        let selectedIndex = tableView.indexPathForSelectedRow!.row
+//        let selectedTweet = self.allTweets[selectedIndex]
+//        
+//        if let destinationViewController = segue.destination as? DetailViewController {
+//            destinationViewController.tweet = selectedTweet
+//        }
+//    }
+//}
 
 
 

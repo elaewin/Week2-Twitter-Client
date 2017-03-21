@@ -48,7 +48,7 @@ class ViewController: UIViewController {
                 }
             }
         }
-    }        
+    }
 }
 
 // MARK: TableViewDataSource and TableViewDelegate methods

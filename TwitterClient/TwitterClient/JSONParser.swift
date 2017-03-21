@@ -14,7 +14,7 @@ class JSONParser {
     
     static var sampleJSONData: Data {
         
-        guard let tweetJSONPath = Bundle.main.url(forResource: "tweet", withExtension: ".json") else { fatalError("There was an error accessing tweet.json") }
+        guard let tweetJSONPath = Bundle.main.url(forResource: "tweet", withExtension: "json") else { fatalError("There was an error accessing tweet.json") }
         
         do {
             return try Data(contentsOf: tweetJSONPath)
